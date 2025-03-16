@@ -102,7 +102,7 @@ $section = isset($_GET['section']) ? $_GET['section'] : 'beranda';
                 </li>
                 <li class="nav-item">
                     <a class="nav-link <?php echo ($section == 'sales') ? 'active' : ''; ?>" href="?section=sales">
-                        <i class="bi bi-cart-fill me-2"></i> Data Penjualan
+                        <i class="bi bi-cart-fill me-2"></i> Data Sales
                     </a>
                 </li>
                 <li class="nav-item">
@@ -160,6 +160,7 @@ $section = isset($_GET['section']) ? $_GET['section'] : 'beranda';
                                     <th>Nama Customer</th>
                                     <th>Alamat</th>
                                     <th>Telepon</th>
+                                    <th>Fax</th>
                                     <th>Email</th>
                                 </tr>
                             </thead>
@@ -174,12 +175,13 @@ $section = isset($_GET['section']) ? $_GET['section'] : 'beranda';
                                                 <td>".$row["id_customer"]."</td>
                                                 <td>".$row["nama_customer"]."</td>
                                                 <td>".$row["alamat"]."</td>
-                                                <td>".$row["telepon"]."</td>
+                                                <td>".$row["telp"]."</td>
+                                                <td>".$row["fax"]."</td>
                                                 <td>".$row["email"]."</td>
                                               </tr>";
                                     }
                                 } else {
-                                    echo "<tr><td colspan='5'>Tidak ada data customer</td></tr>";
+                                    echo "<tr><td colspan='6'>Tidak ada data customer</td></tr>";
                                 }
                                 ?>
                             </tbody>
@@ -192,34 +194,36 @@ $section = isset($_GET['section']) ? $_GET['section'] : 'beranda';
             <?php if ($section == 'sales'): ?>
                 <div class="card">
                     <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Data Penjualan</h5>
+                        <h5 class="mb-0">Data Sales</h5>
                     </div>
                     <div class="card-body">
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ID Penjualan</th>
-                                    <th>Tanggal Penjualan</th>
-                                    <th>Total Harga</th>
+                                    <th>ID Sales</th>
+                                    <th>Tanggal Sales</th>
                                     <th>ID Customer</th>
+                                    <th>Do Number</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 // Query untuk mengambil data dari tabel penjualan
-                                $sql = "SELECT * FROM transaction";
+                                $sql = "SELECT * FROM sales";
                                 $result = $koneksi->query($sql);
                                 if ($result->num_rows > 0) {
                                     while($row = $result->fetch_assoc()) {
                                         echo "<tr>
-                                                <td>".$row["id_penjualan"]."</td>
-                                                <td>".$row["tanggal_penjualan"]."</td>
-                                                <td>".$row["total_harga"]."</td>
+                                                <td>".$row["id_sales"]."</td>
+                                                <td>".$row["tgl_sales"]."</td>
                                                 <td>".$row["id_customer"]."</td>
+                                                <td>".$row["do_number"]."</td>
+                                                <td>".$row["status"]."</td>
                                               </tr>";
                                     }
                                 } else {
-                                    echo "<tr><td colspan='4'>Tidak ada data penjualan</td></tr>";
+                                    echo "<tr><td colspan='5'>Tidak ada data penjualan</td></tr>";
                                 }
                                 ?>
                             </tbody>
@@ -238,8 +242,8 @@ $section = isset($_GET['section']) ? $_GET['section'] : 'beranda';
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>ID Barang</th>
-                                    <th>Nama Barang</th>
+                                    <th>ID Item</th>
+                                    <th>Nama Item</th>
                                     <th>UOM</th>
                                     <th>Harga Beli</th>
                                     <th>Harga Jual</th>
@@ -281,27 +285,29 @@ $section = isset($_GET['section']) ? $_GET['section'] : 'beranda';
                             <thead>
                                 <tr>
                                     <th>ID Transaksi</th>
-                                    <th>Tanggal Transaksi</th>
-                                    <th>Total Harga</th>
-                                    <th>ID Customer</th>
+                                    <th>ID Item</th>
+                                    <th>Quantity</th>
+                                    <th>Price</th>
+                                    <th>Amount</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 // Query untuk mengambil data dari tabel transaksi
-                                $sql = "SELECT * FROM transaksi";
+                                $sql = "SELECT * FROM transaction";
                                 $result = $koneksi->query($sql);
                                 if ($result->num_rows > 0) {
                                     while($row = $result->fetch_assoc()) {
                                         echo "<tr>
-                                                <td>".$row["id_transaksi"]."</td>
-                                                <td>".$row["tanggal_transaksi"]."</td>
-                                                <td>".$row["total_harga"]."</td>
-                                                <td>".$row["id_customer"]."</td>
+                                                <td>".$row["id_transaction"]."</td>
+                                                <td>".$row["id_item"]."</td>
+                                                <td>".$row["quantity"]."</td>
+                                                <td>".$row["price"]."</td>
+                                                <td>".$row["amount"]."</td>
                                               </tr>";
                                     }
                                 } else {
-                                    echo "<tr><td colspan='4'>Tidak ada data transaksi</td></tr>";
+                                    echo "<tr><td colspan='5'>Tidak ada data transaksi</td></tr>";
                                 }
                                 ?>
                             </tbody>
