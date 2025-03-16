@@ -1,0 +1,175 @@
+*{
+    font-family: sans-serif;
+}
+/* Header Styles */
+.header {
+    background-image: url('kelas.png'); /* Gambar latar header */
+    background-size: cover; /* Gambar menutupi seluruh header */
+    background-position: center; /* Posisi gambar di tengah */
+    height: 100vh; 
+    color: white; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay hitam transparan */
+    z-index: 1;
+}
+
+/* Konten di dalam header */
+.header-content {
+    position: relative;
+    z-index: 2;
+    margin-left: 270px;
+}
+
+.header-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.header-content .tbl-mulai {
+    background-color: #007bff; 
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.header-content .tbl-mulai:hover {
+    background-color: #007bff; 
+}
+
+/* Navbar Styles */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 3;
+}
+
+.navbar h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin-left: 20px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: #007bff; 
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px; 
+    height: 100vh; 
+    background-color: #f8f9fa; 
+    position: fixed; /* Sidebar tetap di tempat */
+    top: 0;
+    left: 0;
+    padding-top: 100px; /* Jarak dari atas */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Bayangan */
+    z-index: 2;
+}
+
+.sidebar ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+}
+
+.sidebar ul li a {
+    text-decoration: none; 
+    color: black;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #007bff;
+}
+
+/* Konten Utama */
+.main-content {
+    font-size: 24px;
+    text-align: justify;
+    margin-left: 250px;
+    padding: 20px;
+    position: relative;
+    z-index: 1; 
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Footer Styles */
+.footer-final {
+    margin-top: 100px;
+    height: 80px;
+    display: flex;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: space-between;
+    background: #e2e2e2;
+    position: relative;
+    z-index: 1; 
+    margin-left: 200px;
+}
+
+.footer-final > div {
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+}

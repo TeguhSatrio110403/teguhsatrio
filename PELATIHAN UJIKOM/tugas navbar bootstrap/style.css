@@ -1,0 +1,46 @@
+/*BAGIAN NAVBAR*/
+.navbar {
+    background: #ffff;
+    height: 75px;
+    display: flex;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(1, 1, 1, 0.1);
+}
+
+.navbar>h1 {
+    font-size: 38px;
+    color: #45BA65;
+    font-weight: bolder;
+}
+
+nav ul {
+    font-size: 20px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    transition: 0.5s ease;
+    color: #45BA65;
+    transition: 0.3s;
+}
+
+nav ul li a {
+    color: #252525;
+    font-weight: bold;
+    text-align: center;
+    padding: 0px 20px 0px 20px;
+    text-decoration: none;
+}
